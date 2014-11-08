@@ -14,7 +14,7 @@ Then(/^I should be in the login page$/) do
 end
 
 Given(/^I have an account$/) do
-  User.new(username:username,password:password).save!
+  User.new(:username => username, :password => password).save!
 end
 
 Given(/^I am on login page$/) do
@@ -22,8 +22,8 @@ Given(/^I am on login page$/) do
 end
 
 When(/^I fill in correct account information$/) do
-  fill_in 'username', with: username
-  fill_in 'password', with: password
+  fill_in 'username', :with => username
+  fill_in 'password', :with => password
 end
 
 When(/^press "(.*?)" button$/) do |button|
@@ -35,10 +35,10 @@ Then(/^I should see pet profile page$/) do
 end
 
 Given(/^I have logged in$/) do
-   User.new(username:email, password:password).save!
+  User.new(:username => username, :password => password).save!
   visit '/users/login'
-  fill_in 'username', with: email
-  fill_in 'Password', with: password
+  fill_in 'username', :with => email
+  fill_in 'Password', :with => password
   click_button 'submit'
 end
 
@@ -61,7 +61,3 @@ end
 Then(/^I should see registration screen(\d+)$/) do |screen|
   visit 'users/registration screen1'
 end
-
-
-
-

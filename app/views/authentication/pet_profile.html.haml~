@@ -1,0 +1,2 @@
+%h1 Pet Profile
+= form_for :url => yourpet_pet_profile_path, :method => :put do |f|

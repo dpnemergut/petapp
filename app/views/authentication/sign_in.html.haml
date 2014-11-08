@@ -1,0 +1,17 @@
+%p Know Your Pet
+= form_for @user, :as => :user, :url => yourpet_sign_in_path(@user) do |f|
+  %p
+    = f.label 'username or email:'
+    %br/
+    = f.text_field :username
+  %p
+    = f.label 'password:'
+    %br/
+    = f.password_field :password
+  %p
+    = f.submit 'Sign In',:id => "user_signin", :name => "user_signin"
+  %p
+    = link_to "Sign up", :yourpet_new_user, :id => "user_signup", :name => "user_signup"
+  %p
+    = link_to 'forgot your password?', :yourpet_forgot_password, :id => "user_forgotpassword", :name => "user_forgotpassword"
+

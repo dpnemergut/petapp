@@ -4,6 +4,7 @@ class CreateUserModel < ActiveRecord::Migration
       t.column :username, :string
       t.column :email, :string
       t.column :password, :string
+			t.column :petid, :string		
     end
   end
 

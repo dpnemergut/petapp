@@ -9,7 +9,7 @@ end
 
 Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
-  expect(current_path).to eq("/yourpet/sign_in")
+  #expect(current_path).to eq("/yourpet/sign_in")
   #current_path.expect == "/sign_in"
 end
 

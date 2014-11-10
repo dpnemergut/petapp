@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :username, :password
+  attr_accessible :email, :username, :password, :petid
   
   def self.authenticate_by_email(email, password)
   user = find_by_email(email)

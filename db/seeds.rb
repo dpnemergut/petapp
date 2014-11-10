@@ -9,7 +9,7 @@
 users = [{:username => 'Santoshi', :email => 'santoshi.nitya@gmail.com', :password => 'hello', :petid => 'p01'},
   	 ]
 
-pets = [{:petid => 'p01', :petname => 'django', :breed => 'labrador', :color => 'grey', :dob => '2014-01-14', :interest => 'Stroll', :description => 'Puppy', :ownerfname => 'Santoshi', :ownerlname => 'Nithya'},
+pets = [{:petid => 'p01', :petname => 'django', :breed => 'labrador', :color => 'grey', :dob => '2014-01-14', :interest => 'Stroll', :description => 'Puppy', :ownerfname => 'Santoshi', :ownerlname => 'Nithya', :gender => 'Male'},
 			]
 
 users.each do |user|

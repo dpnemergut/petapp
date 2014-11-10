@@ -21,7 +21,6 @@ Background: user information and pet infromation has been added to the database
 Scenario: pet profile page on successful login
 	When I login successfully with the username: test1
 	And when I login with the password: pswd1
-	AND I press "user_signin"
 	Then I should see the petname as django in the profile page
 
 Scenario: show all information about the pet on successful login

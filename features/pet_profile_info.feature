@@ -11,16 +11,17 @@ Background: user information and pet infromation has been added to the database
 	|username |email            |password |petid |
 	|test1    |test1@gmail.com  |pswd1    |p01   |
 
-	And Given that the following pet information exists in the database:
+	Given that the following pet information exists in the database:
 	
 	|petid |petname |breed    |color |dob        |interest |description |ownerfname |ownerlname |gender |
 	|po1   |django  |labrador |grey  |2014-01-14 |stroll   |puppy       |test1      |test1lname |male   |
 	
-	And I am on the petapp
+	And I am on the pet home page
 
 Scenario: pet profile page on successful login
 	When I login successfully with the username: test1
 	And when I login with the password: pswd1
+	AND I press "user_signin"
 	Then I should see the petname as django in the profile page
 
 Scenario: show all information about the pet on successful login

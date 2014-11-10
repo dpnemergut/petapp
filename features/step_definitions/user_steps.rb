@@ -25,4 +25,20 @@ Then(/^I should see forgot password page$/) do
   expect(current_path).to eq("/yourpet/forgot_password")
 end
 
+Given /^the following user information exists in the database:$/ do |user_info|
+	user_info.hashes.each do |user|
+		User.create!(user)
+	end
+end
+
+Given /^that the following pet information exists in the database:$/ do |pet_info|
+	pet_info.hashes.each do |pet|
+		Pet.create!(pet)
+	end
+end
+
+
+
+
+
 

@@ -1,13 +1,13 @@
-%p Know Your Pet
+%h1 Know Your Pet
 = form_for @user, :as => :user, :url => yourpet_sign_in_path(@user) do |f|
   %p
-    = f.label 'username or email:'
-    %br/
+    = f.label 'username:'
     = f.text_field :username
+    %br/
   %p
     = f.label 'password:'
-    %br/
     = f.password_field :password
+    %br/
   %p
     = f.submit 'Sign In',:id => "user_signin", :name => "user_signin"
   %p

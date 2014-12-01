@@ -1,0 +1,13 @@
+%h1 All Complaints/Suggestions
+%table#Complaints
+  %thead
+    %tr
+      %th Name
+      %th Complaint/Suggestion
+  %tbody
+    - @complaints.each do |t|
+      %tr
+        %td= t.username
+        %td= t.complaint_suggestion
+
+= link_to 'Back to admin home page', :yourpet_admin_view, :id => "admin", :name => "admin"

@@ -8,10 +8,12 @@ Knowyourpet::Application.routes.draw do
   post "yourpet/sign_in" => "authentication#login"
   get "yourpet/signed_out" => "authentication#signed_out"
   post "yourpet/new_user" => "authentication#register"
-
-  get "yourpet/forgot_password" => "authentication#forgot_password"
-
   get "yourpet/pet_profile" => "profile#pet_profile"
+  get "yourpet/create_complaint" => "profile#create_complaint"
+  post "yourpet/create_complaint" => "profile#submit_complaint"
+  get "yourpet/admin_view"   =>  "admin#admin_view"
+  get "yourpet/view_complaint"   =>  "admin#view_complaint"
+  
   #end
   # The priority is based upon order of creation:
   # first created -> highest priority.

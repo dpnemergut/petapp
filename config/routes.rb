@@ -1,7 +1,7 @@
 Knowyourpet::Application.routes.draw do
   get '/yourpet', to: redirect('/yourpet/sign_in')
   #namespace :yourpet do
-  root :to => redirect('/sign_in')
+  root :to => redirect('/yourpet')
   get "yourpet/sign_in" => "authentication#sign_in"
   get "yourpet/forgot_password" => "authentication#forgot_password"
   get "yourpet/new_user" => "authentication#new_user"

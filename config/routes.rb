@@ -1,4 +1,7 @@
 Knowyourpet::Application.routes.draw do
+  resources :medical_records
+
+
   get '/yourpet', to: redirect('/yourpet/sign_in')
   #namespace :yourpet do
   root :to => redirect('/yourpet')
@@ -8,6 +11,7 @@ Knowyourpet::Application.routes.draw do
   post "yourpet/sign_in" => "authentication#login"
   get "yourpet/signed_out" => "authentication#signed_out"
   post "yourpet/new_user" => "authentication#register"
+  get "yourpet/pet_profile/medical" => "medical_records#show"
 
   get "yourpet/forgot_password" => "authentication#forgot_password"
 

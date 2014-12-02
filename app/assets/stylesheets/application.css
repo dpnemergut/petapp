@@ -16,7 +16,8 @@
   border: 1px solid #000066;
   padding: 4px;
   margin-bottom: 10px;
-  background-color: #cc3333;
+  background-color: #ee3333;
+  
 }
 
 #flash_notice {
@@ -63,20 +64,33 @@ h1.title {
   font-size: 2em;
   font-style: normal;
 }
-table#complaints {
+.ButtonStyle{
+  color: maroon;
+  font-size: 100%;
+  display: block;
+  background-color: #F37E7E;
+  width: 100px;
+}
+
+table#Complaints {
   margin: 10px;
   border-collapse: collapse;
-  width: 100%;
+  width: 50%;
   border-bottom: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
 }
-table#complaints th {
-  border: 2px solid blue;
+table#Complaints th {
+  border: 2px solid black;
   font-weight: bold;
   background-color: wheat;
-}
-table#complaints th, table#complaints td {
   padding: 4px;
   text-align: left;
+}
+table#Complaints td {
+  padding: 4px;
+  text-align: left;
+  border: 1px solid #D0D0D0;
 }
 
 form label {

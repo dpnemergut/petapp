@@ -9,9 +9,9 @@
     = f.password_field :password
     %br/
   %p
-    = f.submit 'Sign In',:id => "user_signin", :name => "user_signin"
+    = f.submit 'Sign In',:id => "user_signin", :name => "user_signin", :class => "ButtonStyle"
   %p
     = link_to "Sign up", :yourpet_new_user, :id => "user_signup", :name => "user_signup"
   %p
-    = link_to 'forgot your password?', :yourpet_forgot_password, :id => "user_forgotpassword", :name => "user_forgotpassword"
+    = link_to 'Forgot Your Password?', :yourpet_forgot_password, :id => "user_forgotpassword", :name => "user_forgotpassword"
 

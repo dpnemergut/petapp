@@ -17,7 +17,7 @@ class AuthenticationController < ApplicationController
          redirect_to :yourpet_pet_profile
       end
     else
-      flash.now[:error] = 'Unknown user. Please check your username and password.'
+      flash.now[:error] = 'Please check your username and password.'
       render :action => "sign_in"
     end
   end
@@ -40,18 +40,17 @@ class AuthenticationController < ApplicationController
      @user = User.new
   end
 
-  def register
-    @user = User.new(params[:user])
-
-    if @user.valid?
-      @user.save
-      session[:user_id] = @user.id
-      flash[:notice] = 'Welcome.'
-      redirect_to :root
-    else
-      render :action => "new_user"
-    end
-  end
+ # def register
+ #   @user = User.new(params[:user])
+ #   if @user.valid?
+ #     @user.save
+ #     session[:user_id] = @user.id
+ #     flash[:notice] = 'Welcome.'
+ #     redirect_to :root
+ #   else
+ #     render :action => "new_user"
+ #   end
+ #  end
   def forgot_password
   end
 end

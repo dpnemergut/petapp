@@ -3,7 +3,7 @@ class ProfileController < ApplicationController
   
   end
   def create_complaint
-    # default: render 'create_complaint' view
+     
   end
   def submit_complaint
      Complaint.create(users_id: session[:user_id], username: params[:complaint][:username], complaint_suggestion: params[:complaint][:content])    

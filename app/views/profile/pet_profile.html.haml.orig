@@ -1,8 +1,7 @@
 %p Pet profile
+
 <%= link_to "Medical Records", medical_record_path %>
-=======
+
 
 %p
     = link_to 'complaints/suggestions', :yourpet_create_complaint, :id => "complaints_suggestions", :name => "complaints_suggestions"
-  
->>>>>>> origin/master

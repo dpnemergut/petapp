@@ -1,0 +1,12 @@
+%h1 Complaints/Suggestions
+= form_for @complaint, :as => :complaint, :url => yourpet_create_complaint_path(@complaint) do |f|
+  %p
+    = f.label 'Name'
+    %br/
+    = f.text_field :username
+  %p
+    = f.label 'Complaints/Suggestions'
+    %br/
+    = f.text_area :content, :rows => 2, :cols => 60, :autocomplete => :off, :class => "textareabytes"    
+  %p
+    = f.submit 'Submit',:id => "submit_complaint", :name => "submit_complaint", :class => "ButtonStyle"

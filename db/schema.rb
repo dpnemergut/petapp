@@ -11,6 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20141201215347) do
 
   create_table "medical_records", :force => true do |t|
@@ -20,6 +21,14 @@ ActiveRecord::Schema.define(:version => 20141201215347) do
     t.text     "conditions"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+=======
+ActiveRecord::Schema.define(:version => 20141202032724) do
+
+  create_table "complaints", :force => true do |t|
+    t.integer "users_id",             :null => false
+    t.string  "username"
+    t.text    "complaint_suggestion"
+>>>>>>> origin/master
   end
 
   create_table "pets", :force => true do |t|
@@ -39,7 +48,6 @@ ActiveRecord::Schema.define(:version => 20141201215347) do
     t.string "username"
     t.string "email"
     t.string "password"
-    t.string "petid"
   end
 
 end

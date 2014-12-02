@@ -36,6 +36,27 @@ Given /^that the following pet information exists in the database:$/ do |pet_inf
 		Pet.create!(pet)
 	end
 end
+Given(/^the following users exists:$/) do |user_table|
+  user_table.hashes.each do |user|
+       User.create!(user)
+  end
+end
+
+Given(/^the following pet exists :$/) do |pet_table|
+     pet_table.hashes.each do |pet|
+        Pet.create!(pet)
+     end
+end
+
+Then(/^I should see pet profile page$/) do
+  expect(current_path).to eq("/yourpet/pet_profile")
+end
+
+Then(/^I should see complaints\/suggestion page$/) do
+  expect(current_path).to eq("/yourpet/create_complaint")
+end
+
+
 
 Given /^that the following medical information exists in the database:$/ do |medical_records|
 	medical_records.hashes.each do |medical_record|

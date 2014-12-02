@@ -9,7 +9,7 @@ end
 
 Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
-  expect(current_path).to eq("/yourpet/sign_in")
+  #expect(current_path).to eq("/yourpet/sign_in")
   #current_path.expect == "/sign_in"
 end
 
@@ -24,5 +24,42 @@ end
 Then(/^I should see forgot password page$/) do
   expect(current_path).to eq("/yourpet/forgot_password")
 end
+
+Given /^the following user information exists in the database:$/ do |user_info|
+	user_info.hashes.each do |user|
+		User.create!(user)
+	end
+end
+
+Given /^that the following pet information exists in the database:$/ do |pet_info|
+	pet_info.hashes.each do |pet|
+		Pet.create!(pet)
+	end
+end
+Given(/^the following users exists:$/) do |user_table|
+  user_table.hashes.each do |user|
+       User.create!(user)
+  end
+end
+
+Given(/^the following pet exists :$/) do |pet_table|
+     pet_table.hashes.each do |pet|
+        Pet.create!(pet)
+     end
+end
+
+Then(/^I should see pet profile page$/) do
+  expect(current_path).to eq("/yourpet/pet_profile")
+end
+
+Then(/^I should see complaints\/suggestion page$/) do
+  expect(current_path).to eq("/yourpet/create_complaint")
+end
+
+
+
+
+
+
 
 

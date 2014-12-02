@@ -23,7 +23,7 @@ group :assets do
 end
 
 group :test do
-  gem 'cucumber-rails'
+  gem 'cucumber-rails',:require => false
   gem 'cucumber-rails-training-wheels'
 end
 
@@ -37,6 +37,7 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'rspec-rails'
+  gem 'simplecov'
 end
 
 group :production do

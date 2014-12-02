@@ -37,7 +37,15 @@ Given /^that the following pet information exists in the database:$/ do |pet_inf
 	end
 end
 
+Given /^that the following medical information exists in the database:$/ do |medical_records|
+	medical_records.hashes.each do |medical_record|
+		MedicalRecord.create!(medical_record)
+	end
+end
 
+Then /I should see "(.*)"/ do |var|
+  assert page.body =~ /#{e1}/m
+end
 
 
 

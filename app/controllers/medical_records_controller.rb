@@ -38,6 +38,6 @@ class MedicalRecordsController < ApplicationController
 
   private
     def set_medical_record
-      @medical_record = MedicalRecord.find(params[:id])
+      @medical_record = MedicalRecord.find_by pet_id: session[:pet_id]
     end
 end

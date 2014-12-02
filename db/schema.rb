@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141109191753) do
+ActiveRecord::Schema.define(:version => 20141201215347) do
+
+  create_table "medical_records", :force => true do |t|
+    t.integer  "pet_id"
+    t.date     "rabies"
+    t.date     "distemper"
+    t.text     "conditions"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "pets", :force => true do |t|
     t.string "petid"

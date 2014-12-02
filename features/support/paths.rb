@@ -8,6 +8,9 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
 
+
+    when /^the medical records page$/ then medical_record_path
+    when /^the pet profile page$/ then '/yourpet/pet_profile'
     when /^the (pet )?home\s?page$/ then '/yourpet/sign_in'
 #    when /^the movies page$/ then '/sign_in'
 

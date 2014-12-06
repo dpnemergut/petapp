@@ -3,12 +3,8 @@ require 'securerandom'
 
   def pet_profile
      @user = User.where("id = ?", session[:user_id]).first
-     @user.update_attribute(:petid , SecureRandom.hex(2).to_s) if (@user.petid == "")
-     
-     @pet = Pet.where("petid = ?", @user.petid).first_or_create do |newPet|
-       newPet.petid = @user.petid
-     end
-
+     @pet = Pet.where("id = ?", @user.petid).first_or_create
+     @user.update_attribute(:petid , @pet.id) if @user.petid != @pet.id
      session[:pet_id] = @pet.id
   end
 

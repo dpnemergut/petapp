@@ -10,7 +10,7 @@ Background:
     Given the following user information exists in the database:
 
 	|username |email            |password |petid |
-	|test1    |test1@gmail.com  |pswd1    |p01   |
+	|test1    |test1@gmail.com  |pswd1    |1     |
 
     Given that the following pet information exists in the database:
 	

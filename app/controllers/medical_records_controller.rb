@@ -3,27 +3,12 @@ class MedicalRecordsController < ApplicationController
 
   respond_to :html
 
-  def index
-    @medical_records = MedicalRecord.all
-    respond_with(@medical_records)
-  end
-
   def show
     respond_with(@medical_record)
   end
 
-  def new
-    @medical_record = MedicalRecord.new
-    respond_with(@medical_record)
-  end
 
   def edit
-  end
-
-  def create
-    @medical_record = MedicalRecord.new(params[:medical_record])
-    @medical_record.save
-    respond_with(@medical_record)
   end
 
   def update

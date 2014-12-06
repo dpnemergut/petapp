@@ -9,13 +9,14 @@
 users = [{:username => 'Santoshi', :email => 'santoshi.nitya@gmail.com', :password => 'hello', :petid => 'p01'},
   	 ]
 
-pets = [{:petid => 'p01', :petname => 'django', :breed => 'labrador', :color => 'grey', :dob => '2014-01-14', :interest => 'Stroll', :description => 'Puppy', :ownerfname => 'Santoshi', :ownerlname => 'Nithya', :gender => 'Male'},
-			]
+pets = [{:petid => 'p01', :petname => 'django', :breed => 'labrador', :color => 'grey', :dob => '2014-01-14', :interest => 'Stroll', :description => 'Puppy', :ownerfname => 'Santoshi', :ownerlname => 'Nithya', :gender => 'Male'}]
+
+
 
 users.each do |user|
   User.create!(user)
 end
 
 pets.each do |pet|
-	Pet.create!(pet)
+  Pet.create!(pet)
 end

@@ -1,11 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Pet:</b>
-  <%= @medical_record.pet_id %>
-</p>
-
-<p>
   <b>Rabies:</b>
   <%= @medical_record.rabies %>
 </p>
@@ -21,5 +16,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_medical_record_path(@medical_record) %> |
-<%= link_to 'Back', medical_records_path %>
+<%= link_to 'Edit', edit_medical_record_path %> |
+<%= link_to 'Back', yourpet_pet_profile_path %>

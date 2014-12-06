@@ -44,7 +44,7 @@ class AuthenticationController < ApplicationController
     @user = User.new(params[:user])
     
     if @user.valid?
-     @user.save
+     @user.save     
      session[:user_id] = @user.id
      flash[:notice] = 'Welcome.'
      redirect_to :root

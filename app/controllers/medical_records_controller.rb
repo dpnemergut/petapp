@@ -28,7 +28,7 @@ class MedicalRecordsController < ApplicationController
 
   def update
     @medical_record.update_attributes(params[:medical_record])
-    respond_with(@medical_record)
+    redirect_to medical_record_path
   end
 
   def destroy
@@ -38,6 +38,8 @@ class MedicalRecordsController < ApplicationController
 
   private
     def set_medical_record
-      @medical_record = MedicalRecord.find_by pet_id: session[:pet_id]
+      @medical_record = MedicalRecord.where("pet_id = ?", session[:pet_id]).first_or_create do |newMedRecord|
+          newMedRecord.pet_id = session[:pet_id]
+      end
     end
-end
+  end

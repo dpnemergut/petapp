@@ -1,5 +1,5 @@
 Knowyourpet::Application.routes.draw do
-  resources :medical_records, except: :show
+  resources :medical_records, except: [:show, :edit, :update, :destroy]
 
 
   get '/yourpet', to: redirect('/yourpet/sign_in')
@@ -19,6 +19,9 @@ Knowyourpet::Application.routes.draw do
   get "yourpet/admin_view"   =>  "admin#admin_view"
   get "yourpet/view_complaint"   =>  "admin#view_complaint"
   get "yourpet/medical_record" => "medical_records#show", as: "medical_record"
+  get "yourpet/medical_record/edit" => "medical_records#edit", as: "edit_medical_record"
+  put "yourpet/medical_record.:id" => "medical_records#update", as: "update_medical_record"
+  delete "yourpet/medical_record" => "medical_records#destroy", as: "delete_medical_record"
   
   #end
 

@@ -64,9 +64,14 @@ Given /^that the following medical information exists in the database:$/ do |med
 	end
 end
 
-Then /I should see "(.*)"/ do |var|
-  assert page.body =~ /#{e1}/m
+Then /^I should see the medical record for pet id (.*)$/ do |id|
+  record = MedicalRecord.where("pet_id = ?", id).first
+  step %Q(I should see "#{record.rabies}")
+  step %Q(I should see "#{record.distemper}")
+  step %Q(I should see "#{record.conditions}")
 end
+
+
 
 
 

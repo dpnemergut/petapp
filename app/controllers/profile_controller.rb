@@ -1,9 +1,10 @@
 class ProfileController < ApplicationController
+require 'securerandom'
 
   def pet_profile
      @user = User.where("id = ?", session[:user_id]).select("petid").first
      @pet = Pet.where("petid = ?", @user.petid).first_or_create do |newPet|
-       newPet.petid = pet_string
+       newPet.petid = SecureRandom.hex(3)
      end
      session[:pet_id] = @pet.id
   end

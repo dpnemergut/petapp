@@ -1,5 +1,5 @@
 Knowyourpet::Application.routes.draw do
-  resources :medical_records
+  resources :medical_records, except: :show
 
 
   get '/yourpet', to: redirect('/yourpet/sign_in')
@@ -10,19 +10,15 @@ Knowyourpet::Application.routes.draw do
   get "yourpet/new_user" => "authentication#new_user"
   post "yourpet/sign_in" => "authentication#login"
   get "yourpet/signed_out" => "authentication#signed_out"
-<<<<<<< HEAD
   put "yourpet/new_user" => "authentication#register"
-
   get "yourpet/forgot_password" => "authentication#forgot_password"
-
-=======
   post "yourpet/new_user" => "authentication#register"
->>>>>>> origin/master
   get "yourpet/pet_profile" => "profile#pet_profile"
   get "yourpet/create_complaint" => "profile#create_complaint"
   post "yourpet/create_complaint" => "profile#submit_complaint"
   get "yourpet/admin_view"   =>  "admin#admin_view"
   get "yourpet/view_complaint"   =>  "admin#view_complaint"
+  get "yourpet/medical_record" => "medical_records#show", as: "medical_record"
   
   #end
 

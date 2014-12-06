@@ -40,17 +40,19 @@ class AuthenticationController < ApplicationController
      @user = User.new
   end
 
- # def register
- #   @user = User.new(params[:user])
- #   if @user.valid?
- #     @user.save
- #     session[:user_id] = @user.id
- #     flash[:notice] = 'Welcome.'
- #     redirect_to :root
- #   else
- #     render :action => "new_user"
- #   end
- #  end
+  def register
+    @user = User.new(params[:user])
+    
+    if @user.valid?
+     @user.save
+     session[:user_id] = @user.id
+     flash[:notice] = 'Welcome.'
+     redirect_to :root
+    else
+     render :action => "new_user"
+    end
+  end
+
   def forgot_password
   end
 end

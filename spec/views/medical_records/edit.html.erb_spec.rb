@@ -13,8 +13,6 @@ RSpec.describe "medical_records/edit", :type => :view do
 
     assert_select "form[action=?][method=?]", medical_record_path(@medical_record), "post" do
 
-      assert_select "input#medical_record_pet_id[name=?]", "medical_record[pet_id]"
-
       assert_select "textarea#medical_record_conditions[name=?]", "medical_record[conditions]"
     end
   end

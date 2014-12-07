@@ -9,8 +9,8 @@ Background:
 
     Given the following user information exists in the database:
 
-	|username |email            |password |petid |
-	|test1    |test1@gmail.com  |pswd1    |1     |
+	|username |email            |password |petid |password_confirmation|
+	|test1    |test1@gmail.com  |pswd1    |1     |pswd1               |
 
     Given that the following pet information exists in the database:
 	

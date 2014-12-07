@@ -1,6 +1,4 @@
 Knowyourpet::Application.routes.draw do
-  resources :medical_records, except: [:show, :edit, :update, :destroy]
-
 
   get '/yourpet', to: redirect('/yourpet/sign_in')
   #namespace :yourpet do
@@ -14,6 +12,7 @@ Knowyourpet::Application.routes.draw do
   get "yourpet/forgot_password" => "authentication#forgot_password"
   post "yourpet/new_user" => "authentication#register"
   get "yourpet/pet_profile" => "profile#pet_profile"
+	get "yourpet/medical_record" => "medicalrecords#show", as: "medical_record"
   get "yourpet/create_complaint" => "profile#create_complaint"
   post "yourpet/create_complaint" => "profile#submit_complaint"
   get "yourpet/admin_view"   =>  "admin#admin_view"

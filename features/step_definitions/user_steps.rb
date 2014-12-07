@@ -56,7 +56,42 @@ Then(/^I should see complaints\/suggestion page$/) do
   expect(current_path).to eq("/yourpet/create_complaint")
 end
 
+Then (/^I should see "(.*)" in pet profile page\.$/) do |petname|
+ expect(current_path).to eq("/yourpet/pet_profile")
+ step %Q{I should see "#{petname}"}
+end
 
+Then (/^I should see the following information in the profile page: (.*)/) do |petname|
+ expect(current_path).to eq("/yourpet/pet_profile")
+ petinfolist = petname.split(',')
+	petinfolist.each do |item|
+   item = item.strip
+   step %Q{I should see "#{item}"}
+  end
+end
+ 
+Then (/^I should see adminview page$/) do
+ expect(current_path).to eq("/yourpet/admin_view")
+end
+
+Then (/^I should see complaints page$/) do
+ expect(current_path).to eq("/yourpet/view_complaint")
+end
+
+
+
+Given /^that the following medical information exists in the database:$/ do |medical_records|
+	medical_records.hashes.each do |medical_record|
+		MedicalRecord.create!(medical_record)
+	end
+end
+
+Then /^I should see the medical record for pet id (.*)$/ do |id|
+  record = MedicalRecord.where("pet_id = ?", id).first
+  step %Q(I should see "#{record.rabies}")
+  step %Q(I should see "#{record.distemper}")
+  step %Q(I should see "#{record.conditions}")
+end
 
 
 

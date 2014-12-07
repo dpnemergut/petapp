@@ -100,3 +100,25 @@ form label {
   color: maroon;
 }
 
+.linkstyle1{
+ position: fixed;
+ top: 25px;
+ right: 5px;
+}
+
+h2 {
+font-size: 100%;
+font-style: italic;
+position: fixed;
+top: 15px;
+right: 100px;
+}
+
+table#petprofile{
+  margin: 20px;
+  border-collapse: collapse;
+  width: 25%
+}
+
+
+

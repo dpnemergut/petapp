@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Rabies:</b>
+  <%= @medical_record.rabies %>
+</p>
+
+<p>
+  <b>Distemper:</b>
+  <%= @medical_record.distemper %>
+</p>
+
+<p>
+  <b>Conditions:</b>
+  <%= @medical_record.conditions %>
+</p>
+
+
+<%= link_to 'Edit', edit_medical_record_path %> |
+<%= link_to 'Back', yourpet_pet_profile_path %>

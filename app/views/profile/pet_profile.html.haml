@@ -1,4 +1,37 @@
-%p Pet profile
+%p 
+%h1 Welcome to your Pet's Profile!
+%h2 Hi #{User.find_by_id(session[:user_id]).username}!
+= link_to 'Medical Info', :id => "Medical_Info", :name => "Medical_info"
+= link_to 'Sign out', :yourpet_signed_out, :id => "Sign_out", :name => "Sign_out", :class => "linkstyle1"
+
+%table#petprofile
+ %tbody
+  %tr
+   %td= "Petname"
+   %td= @petinfo.petname
+  %tr
+   %td= "Owner"
+   %td= @user.username
+  %tr
+   %td= "Pet DOB"
+   %td= @petinfo.dob
+  %tr
+   %td= "Pet Gender"
+   %td= @petinfo.gender
+  %tr
+   %td= "Pet Breed"
+   %td= @petinfo.breed
+  %tr
+   %td= "Pet Color"
+   %td= @petinfo.color
+  %tr
+   %td= "Interest"
+   %td= @petinfo.interest
+  %tr
+   %td= "Description"
+   %td= @petinfo.description 
+
 %p
     = link_to 'complaints/suggestions', :yourpet_create_complaint, :id => "complaints_suggestions", :name => "complaints_suggestions"
-  
+    = link_to "Medical Records", medical_record_path
+

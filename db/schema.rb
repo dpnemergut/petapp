@@ -19,10 +19,6 @@ ActiveRecord::Schema.define(:version => 20141202032724) do
     t.text    "complaint_suggestion"
   end
 
-  create_table "petofmonth", :force => true do |t|
-    t.string "petid"
-  end
-
   create_table "medical_records", :force => true do |t|
     t.integer  "pet_id"
     t.date     "rabies"
@@ -49,7 +45,6 @@ ActiveRecord::Schema.define(:version => 20141202032724) do
     t.string "username"
     t.string "email"
     t.string "password"
-    t.string "petid"
   end
 
 end

@@ -10,7 +10,8 @@ class AuthenticationController < ApplicationController
     user = User.authenticate_by_username(username, password)
     if user
       session[:user_id] = user.id
-      flash[:notice] = "Welcome #{user.username}."
+      pom = PetOfMonth.petid
+      flash[:notice] = "Pet of the month: #{pom}."
       if username == "admin" && password == "admin"
          redirect_to :yourpet_admin_view
       else

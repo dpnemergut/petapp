@@ -19,6 +19,10 @@ ActiveRecord::Schema.define(:version => 20141202032724) do
     t.text    "complaint_suggestion"
   end
 
+  create_table "petofmonth", :force => true do |t|
+    t.string "petid"
+  end
+
   create_table "pets", :force => true do |t|
     t.string "petid"
     t.string "petname"

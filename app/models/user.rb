@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
-  attr_accessible :id, :email, :username, :password, :petid, :securityQuestion, :securityAnswer
+  attr_accessible :id, :email, :username, :password, :password_confirmation, :petid, :securityQuestion, :securityAnswer
+
+  validates :password, confirmation: true
+  validates :password_confirmation, presence: true
   
   def self.authenticate_by_username(username, password)
      user = find_by_username(username)

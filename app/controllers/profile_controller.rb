@@ -1,6 +1,12 @@
 class ProfileController < ApplicationController
   def pet_profile
-  
+		@user = User.find_by_id(session[:user_id])
+    @petid = User.find_by_id(session[:user_id]).petid
+    if (Pet.find(:first, :conditions =>["petid = ?" , @petid]).nil?)
+		 flash[:notice] = "You don't have any Pet information"
+    else
+     @petinfo = Pet.find(:first, :conditions =>["petid = ?" , @petid])
+    end
   end
   def create_complaint
      

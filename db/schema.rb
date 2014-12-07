@@ -11,16 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141202032724) do
+ActiveRecord::Schema.define(:version => 20141125042352) do
 
   create_table "complaints", :force => true do |t|
     t.integer "users_id",             :null => false
     t.string  "username"
     t.text    "complaint_suggestion"
-  end
-
-  create_table "petofmonth", :force => true do |t|
-    t.string "petid"
   end
 
   create_table "pets", :force => true do |t|
@@ -40,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20141202032724) do
     t.string "username"
     t.string "email"
     t.string "password"
+    t.string "petid"
   end
 
 end

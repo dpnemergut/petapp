@@ -1,4 +1,7 @@
+%p
 %h1 Complaints/Suggestions
+%h2 Hi #{User.find_by_id(session[:user_id]).username}!
+= link_to 'Sign out', :yourpet_signed_out, :id => "Sign_out", :name => "Sign_out", :class => "linkstyle1"
 = form_for @complaint, :as => :complaint, :url => yourpet_create_complaint_path(@complaint) do |f|
   %p
     = f.label 'Name'

@@ -1,6 +1,4 @@
 Knowyourpet::Application.routes.draw do
-  resources :medical_records, except: [:show, :edit, :update, :destroy]
-
 
   get '/yourpet', to: redirect('/yourpet/sign_in')
   #namespace :yourpet do

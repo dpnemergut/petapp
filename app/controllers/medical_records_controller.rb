@@ -18,7 +18,7 @@ class MedicalRecordsController < ApplicationController
 
   def destroy
     @medical_record.destroy
-    respond_with(@medical_record)
+    redirect_to yourpet_sign_in_path
   end
 
   private

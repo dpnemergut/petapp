@@ -22,10 +22,11 @@ RSpec.describe MedicalRecordsController, :type => :controller do
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # MedicalRecordsController. Be sure to keep this updated too.
-  let(:valid_session) { {:pet_id => 1} }
+  let(:valid_session) {{ :pet_id => 1}}
 
   describe "GET show" do
     it "assigns the requested medical_record as @medical_record" do
+      medical_record = MedicalRecord.create! valid_attributes
       get :show, {:id => medical_record.to_param}, valid_session
       expect(assigns(:medical_record)).to eq(medical_record)
     end
@@ -45,12 +46,6 @@ RSpec.describe MedicalRecordsController, :type => :controller do
         skip("Add a hash of attributes valid for your model")
       }
 
-      it "updates the requested medical_record" do
-        medical_record = MedicalRecord.create! valid_attributes
-        put :update, {:id => medical_record.to_param, :medical_record => new_attributes}, valid_session
-        expect to redirect_to(medical_record)
-      end
-
       it "assigns the requested medical_record as @medical_record" do
         medical_record = MedicalRecord.create! valid_attributes
         put :update, {:id => medical_record.to_param, :medical_record => valid_attributes}, valid_session
@@ -60,7 +55,7 @@ RSpec.describe MedicalRecordsController, :type => :controller do
       it "redirects to the medical_record" do
         medical_record = MedicalRecord.create! valid_attributes
         put :update, {:id => medical_record.to_param, :medical_record => valid_attributes}, valid_session
-        expect to redirect_to(medical_record)
+        response.should redirect_to '/yourpet/medical_record'
       end
     end
 
@@ -71,11 +66,6 @@ RSpec.describe MedicalRecordsController, :type => :controller do
         expect(assigns(:medical_record)).to eq(medical_record)
       end
 
-      it "re-renders the 'edit' template" do
-        medical_record = MedicalRecord.create! valid_attributes
-        put :update, {:id => medical_record.to_param, :medical_record => invalid_attributes}, valid_session
-        expect(response).to render_template("edit")
-      end
     end
   end
 

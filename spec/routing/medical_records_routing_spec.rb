@@ -12,7 +12,7 @@ RSpec.describe MedicalRecordsController, :type => :routing do
     end
 
     it "routes to #update" do
-      expect(:put => "/yourpet/medical_record").to route_to("medical_records#update", :id => "1")
+      expect(:put => "/yourpet/medical_record.1").to route_to("medical_records#update", :id => "1")
     end
 
     it "routes to #destroy" do

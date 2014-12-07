@@ -11,6 +11,16 @@
     = f.text_field :email
     = show_field_error(@user, :email)
   %p
+    = f.label 'first_name:'
+    %br/
+    = f.text_field :first_name
+    = show_field_error(@user, :first_name)
+  %p
+    = f.label 'last_name:'
+    %br/
+    = f.text_field :last_name
+    = show_field_error(@user, :last_name)
+  %p
     = f.label 'password:'
     %br/
     = f.password_field :password

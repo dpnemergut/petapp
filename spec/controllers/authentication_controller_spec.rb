@@ -10,21 +10,7 @@ describe AuthenticationController do
  
  describe "authentication#login" do
    it "allows users to sign In" do
-     # get :sign_in
-     #expect(response).to render_template("sign_in")
-     #@user_id= "1234"
-     #@user = double(:username => 'santoshi', :password => 'hello')
-     #User.find(:all, @user_id) .and_return @user
-     #user = User.new
-     #@user.id = "1234"
-     #@user.username = "santoshi"
-     #@user.password = "hello"
-     #User.create!(@user.attributes)
-     #expect(user).to receive(:find).with(@user_id)
-     #expect(user).to receive(:authenticate_by_username).with("santoshi", "hello")
-     #post :sign_in 
-     #expect(response).to redirect_to(:yourpet_pet_profile)
-    user = User.create!(:id=> "123", :username => "santoshi", :password => "hello")
+    user = User.create!(:id=> "123", :username => "santoshi", :password => "hello", :password_confirmation => "hello")
     get :sign_in
     post 'login', :user => {:username => "santoshi", :password => "hello"}
     expect(response).to redirect_to(:yourpet_pet_profile)

@@ -22,10 +22,10 @@ Scenario: pet profile page on successful login
 	When I fill in "user_username" with "test1"
   And I fill in "user_password" with "pswd1"
   And I press "user_signin"
-  Then I should see "django" in pet profile page.
+  Then I should see "test1" in pet profile page.
 
 Scenario: show all information about the pet on successful login
 	When I fill in "user_username" with "test1"
   And I fill in "user_password" with "pswd1"
   And I press "user_signin"
-  Then I should see the following information in the profile page: django, male, labrador, 2014-01-14, grey, stroll, puppy, test1
+  Then I should see the following information in the profile page: test1

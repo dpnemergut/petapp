@@ -60,6 +60,13 @@ Then (/^I should see "(.*)" in pet profile page\.$/) do |petname|
  expect(current_path).to eq("/yourpet/pet_profile")
  step %Q{I should see "#{petname}"}
 end
+When(/^I should see forgotpassword page$/) do
+  expect(current_path).to eq("/yourpet/forgot_password")
+end
+
+When(/^I should see resetpassword page$/) do
+  expect(current_path).to eq("/yourpet/reset_password")
+end
 
 Then (/^I should see the following information in the profile page: (.*)/) do |petname|
  expect(current_path).to eq("/yourpet/pet_profile")
@@ -92,6 +99,11 @@ Then /^I should see the medical record for pet id (.*)$/ do |id|
   step %Q(I should see "#{record.distemper}")
   step %Q(I should see "#{record.conditions}")
 end
+
+When(/^I fill in  "(.*?)" with "(.*?)"$/) do |field, value|
+   fill_in(field, :with => value)
+end
+
 
 
 

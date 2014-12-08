@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141207203235) do
+ActiveRecord::Schema.define(:version => 20141208030701) do
 
   create_table "complaints", :force => true do |t|
     t.integer "users_id",             :null => false
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(:version => 20141207203235) do
     t.string "last_name"
     t.string "securityQuestion"
     t.string "securityAnswer"
+    t.string "password_confirmation"
   end
 
 end

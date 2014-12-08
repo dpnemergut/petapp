@@ -106,11 +106,17 @@ form label {
  right: 5px;
 }
 
+.linkstyle2{
+ position: fixed;
+ top: 10px;
+ right: 5px;
+}
+
 h2 {
 font-size: 100%;
 font-style: italic;
 position: fixed;
-top: 15px;
+top: 2px;
 right: 100px;
 }
 

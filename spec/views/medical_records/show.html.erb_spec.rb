@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "medical_records/show", :type => :view do
+RSpec.describe "medicalrecords/show", :type => :view do
   before(:each) do
     @medical_record = assign(:medical_record, MedicalRecord.create!(
       :pet_id => 1,

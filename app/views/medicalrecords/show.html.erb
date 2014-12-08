@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+<h1> Medical Records </h1>
+<%= link_to 'Sign out', :yourpet_signed_out, :id => "Sign_out", :name => "Sign_out", :class => "linkstyle2" %>
+<p>
+  <b>Rabies:</b>
+  <%= @medical_record.rabies %>
+</p>
+
+<p>
+  <b>Distemper:</b>
+  <%= @medical_record.distemper %>
+</p>
+
+<p>
+  <b>Conditions:</b>
+  <%= @medical_record.conditions %>
+</p>
+
+
+<%= link_to 'Edit', edit_medical_record_path %> |
+<%= link_to 'Back', yourpet_pet_profile_path %>

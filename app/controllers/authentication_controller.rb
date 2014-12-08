@@ -6,7 +6,6 @@ class AuthenticationController < ApplicationController
   def login
     username= params[:user][:username]
     password = params[:user][:password]
-    username=username
     user = User.authenticate_by_username(username, password)
     if user
       session[:user_id] = user.id
@@ -65,12 +64,48 @@ class AuthenticationController < ApplicationController
     if @pet.valid?
       @pet.save
       session[:pet_id] = @pet.id
-      redirect_to :root
+      @user_id=session[:user_id]
+      @user=User.find(@user_id)
+      @user.update_attribute(:petid , @pet.id)
+      redirect_to :yourpet_pet_profile
     else
       render :action => "new_pet"
     end
   end
 
-  def forgot_password
+   def checkQuestion
+     question = User.get_security_question(params[:username])
+     
+  end
+   def forgot_password
+     @user = User.new
+  end
+  def forgot_password1
+    @username=params[:user][:username]
+    @user = User.where("username = ?", @username).first
+    
+    if @user.nil?
+      flash[:notice] = "Unknown User"
+      redirect_to :yourpet_forgot_password
+    else
+      session[:user_id] = @user.id
+      redirect_to :yourpet_reset_password
+    end
+  end
+  def reset_password
+      @user=User.find(session[:user_id])
+      @user.securityAnswer = ""
+  end
+  def validate_answer
+      @user=User.find(session[:user_id])
+      @securityAnswer = params[:user][:securityAnswer]
+      @mat=@user.securityAnswer
+      if @mat==@securityAnswer
+         flash[:notice] = "#{@user.username}, your password is #{@user.password}" 
+         redirect_to :yourpet_sign_in
+      else
+         flash[:notice] = "Your answer is wrong"
+         redirect_to :yourpet_reset_password
+      end
   end
 end

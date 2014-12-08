@@ -13,6 +13,8 @@ module NavigationHelpers
     when /^the edit medical record page$/ then edit_medical_record_path
     when /^the pet profile page$/ then '/yourpet/pet_profile'
     when /^the (pet )?home\s?page$/ then '/yourpet/sign_in'
+    when /^ the new user page/ then '/yourpet/new_user'
+    when /^ the forgotpassword page/ then '/yourpet/sign_in'
 #    when /^the movies page$/ then '/sign_in'
 
     # Add more mappings here.

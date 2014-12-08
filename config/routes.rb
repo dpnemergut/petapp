@@ -5,11 +5,12 @@ Knowyourpet::Application.routes.draw do
   root :to => redirect('/yourpet')
   get "yourpet/sign_in" => "authentication#sign_in"
   get "yourpet/forgot_password" => "authentication#forgot_password"
+  get "yourpet/reset_password"=> "authentication#reset_password"
   get "yourpet/new_user" => "authentication#new_user"
   post "yourpet/sign_in" => "authentication#login"
   get "yourpet/signed_out" => "authentication#signed_out"
   put "yourpet/new_user" => "authentication#register"
-  get "yourpet/forgot_password" => "authentication#forgot_password"
+  post "yourpet/forgot_password" => "authentication#reset_password"
   post "yourpet/new_user" => "authentication#register"
   get "yourpet/pet_profile" => "profile#pet_profile"
 	get "yourpet/medical_record" => "medicalrecords#show", as: "medical_record"

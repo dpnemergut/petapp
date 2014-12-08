@@ -53,6 +53,8 @@ ActiveRecord::Schema.define(:version => 20141207203235) do
     t.string "petid"
     t.string "first_name"
     t.string "last_name"
+    t.string "securityQuestion"
+    t.string "securityAnswer"
   end
 
 end

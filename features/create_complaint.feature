@@ -8,9 +8,9 @@ Background: user information and pet infromation has been added to the database
 
 	Given the following users exists:
 
-	|username  |password |petid |
-	|santoshi  |hello    |p01   |
-  |admin     |admin    |p02   |
+	|username  |password |petid |password_confirmation |
+	|santoshi  |hello    |p01   |hello                 |
+  |admin     |admin    |p02   |admin                 |
 
 	Given the following pet exists :
 	

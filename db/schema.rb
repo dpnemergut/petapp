@@ -28,10 +28,6 @@ ActiveRecord::Schema.define(:version => 20141207203235) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "petofmonth", :force => true do |t|
-    t.string "petid"
-  end
-
   create_table "pets", :force => true do |t|
     t.string  "petid"
     t.string  "petname"

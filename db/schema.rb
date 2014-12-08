@@ -28,10 +28,6 @@ ActiveRecord::Schema.define(:version => 20141202032724) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "petofmonth", :force => true do |t|
-    t.string "petid"
-  end
-
   create_table "pets", :force => true do |t|
     t.string "petid"
     t.string "petname"
@@ -49,7 +45,6 @@ ActiveRecord::Schema.define(:version => 20141202032724) do
     t.string "username"
     t.string "email"
     t.string "password"
-    t.string "petid"
   end
 
 end

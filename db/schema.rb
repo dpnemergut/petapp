@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141202032724) do
+ActiveRecord::Schema.define(:version => 20141207203235) do
 
   create_table "complaints", :force => true do |t|
     t.integer "users_id",             :null => false
@@ -33,16 +33,17 @@ ActiveRecord::Schema.define(:version => 20141202032724) do
   end
 
   create_table "pets", :force => true do |t|
-    t.string "petid"
-    t.string "petname"
-    t.string "breed"
-    t.string "color"
-    t.date   "dob"
-    t.text   "interest"
-    t.text   "description"
-    t.text   "ownerfname"
-    t.text   "ownerlname"
-    t.string "gender"
+    t.string  "petid"
+    t.string  "petname"
+    t.string  "breed"
+    t.string  "color"
+    t.date    "dob"
+    t.text    "interest"
+    t.text    "description"
+    t.text    "ownerfname"
+    t.text    "ownerlname"
+    t.string  "gender"
+    t.integer "user_id"
   end
 
   create_table "users", :force => true do |t|
@@ -50,6 +51,8 @@ ActiveRecord::Schema.define(:version => 20141202032724) do
     t.string "email"
     t.string "password"
     t.string "petid"
+    t.string "first_name"
+    t.string "last_name"
   end
 
 end

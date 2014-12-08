@@ -8,8 +8,8 @@ Background: user information and pet infromation has been added to the database
 
 	Given the following user information exists in the database:
 
-	|username |email            |password |petid |
-	|test1    |test1@gmail.com  |pswd1    |p01   |
+	|username |email            |password |petid |password_confirmation |
+	|test1    |test1@gmail.com  |pswd1    |p01   |pswd1                 |
 
 	Given that the following pet information exists in the database:
 	

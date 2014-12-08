@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
-  attr_accessible :id, :email, :username, :password, :password_confirmation, :petid, :securityQuestion, :securityAnswer
+  attr_accessible :id, :email, :username, :password, :password_confirmation, :petid, :securityQuestion, :securityAnswer, :first_name, :last_name
+
+  has_many :pets
 
   validates :password, confirmation: true
   validates :password_confirmation, presence: true

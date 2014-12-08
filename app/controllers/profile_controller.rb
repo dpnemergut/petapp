@@ -1,5 +1,5 @@
 class ProfileController < ApplicationController
-require 'securerandom'
+#require 'securerandom'
 
   def pet_profile
      @user = User.where("id = ?", session[:user_id]).first

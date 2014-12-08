@@ -1,0 +1,33 @@
+%h2 Sign Up Your Pet!
+= form_for @pet, :as => :pet, :url => yourpet_new_pet_path, :method => :put do |f|
+  %p
+    = f.label 'petname'
+    %br/
+    = f.text_field :petname
+    = show_field_error(@pet, :petname)
+  %p
+    = f.label 'breed'
+    %br/
+    = f.text_field :breed
+  %p
+    = f.label 'color'
+    %br/
+    = f.text_field :color
+  %p
+    = f.label 'interest'
+    %br/
+    = f.text_field :interest
+  %p
+    = f.label 'description'
+    %br/
+    = f.text_field :description
+  %p
+    = f.label 'gender'
+    %br/
+    = f.text_field :gender
+  %p
+    = f.label 'DOB'
+    %br/
+    = f.date_select :dob
+  %p
+    = f.submit 'Submit'

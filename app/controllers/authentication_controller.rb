@@ -49,9 +49,25 @@ class AuthenticationController < ApplicationController
      @user.save     
      session[:user_id] = @user.id
      flash[:notice] = 'Welcome.'
-     redirect_to :root
+     redirect_to :yourpet_new_pet
     else
      render :action => "new_user"
+    end
+  end
+
+  def new_pet
+    @pet = Pet.new
+  end
+
+  def register_pet
+    @pet = Pet.new (params[:pet])
+    
+    if @pet.valid?
+      @pet.save
+      session[:pet_id] = @pet.id
+      redirect_to :root
+    else
+      render :action => "new_pet"
     end
   end
 
